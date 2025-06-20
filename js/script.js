@@ -11,29 +11,50 @@ document.getElementById('enrollmentForm').addEventListener('submit', async funct
     // Специально обрабатываем чекбокс, чтобы получить true/false
     data.consent = this.elements.consent.checked;
 
+    // Получаем элементы тостов
+    const successToastElement = document.getElementById('successToast');
+    const errorToastElement = document.getElementById('errorToast');
+    const successToastBody = successToastElement.querySelector('.toast-body');
+    const errorToastBody = errorToastElement.querySelector('.toast-body');
+
     try {
         // Отправляем POST-запрос на наш Flask-бэкенд
+<<<<<<< HEAD
         const response = await fetch('https://defabio.pythonanywhere.com/send-email', { // !!! ВАЖНО: Убедитесь, что URL правильный !!!
+=======
+        // Убедитесь, что URL правильный (с '/send-email')
+        const response = await fetch('https://defabio.pythonanywhere.com/send-email', {
+>>>>>>> d1d32ec (adding togle)
             method: 'POST',
             headers: {
-                'Content-Type': 'application/json' // Указываем, что отправляем JSON
+                'Content-Type': 'application/json'
             },
-            body: JSON.stringify(data) // Преобразуем JS-объект в JSON-строку
+            body: JSON.stringify(data)
         });
 
-        const result = await response.json(); // Ожидаем JSON-ответ от бэкенда
+        const result = await response.json();
 
-        if (response.ok) { // Если HTTP-статус 2xx (например, 200 OK)
-            alert(result.message); // Показываем сообщение об успехе ("Заявка успешно отправлена!")
+        if (response.ok) {
+            successToastBody.textContent = result.message; // Вставляем текст успеха
+            const successToast = new bootstrap.Toast(successToastElement); // Инициализируем тост
+            successToast.show(); // Показываем тост
+
             this.reset(); // Очищаем форму
-            // Если форма в модальном окне Bootstrap, можно закрыть его
-            // const modal = bootstrap.Modal.getInstance(document.getElementById('yourModalModalId'));
-            // if (modal) modal.hide();
-        } else { // Если HTTP-статус 4xx или 5xx (ошибка)
-            alert('Ошибка: ' + result.message); // Показываем сообщение об ошибке
+
+            // Закрываем модальное окно после успешной отправки
+            const enrollModal = bootstrap.Modal.getInstance(document.getElementById('enrollModal'));
+            if (enrollModal) {
+                enrollModal.hide();
+            }
+        } else {
+            errorToastBody.textContent = 'Ошибка: ' + result.message; // Вставляем текст ошибки
+            const errorToast = new bootstrap.Toast(errorToastElement); // Инициализируем тост
+            errorToast.show(); // Показываем тост
         }
     } catch (error) {
-        console.error('Ошибка сети или сервера:', error); // Выводим ошибку в консоль браузера
-        alert('Произошла ошибка при отправке. Пожалуйста, попробуйте еще раз.');
+        console.error('Ошибка сети или сервера:', error);
+        errorToastBody.textContent = 'Произошла ошибка при отправке. Пожалуйста, попробуйте еще раз.';
+        const errorToast = new bootstrap.Toast(errorToastElement);
+        errorToast.show();
     }
 });

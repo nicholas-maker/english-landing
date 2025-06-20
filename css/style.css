@@ -1,5 +1,6 @@
 body {
     color: #333333;
+    background: linear-gradient(to bottom, #f8f8f8, #f0f0f0);
 }
 
 section, footer{
@@ -98,4 +99,8 @@ header{
 
 .reviews-block{
     justify-content: center;
+}
+
+.toast-container {
+    z-index: 1090;
 }

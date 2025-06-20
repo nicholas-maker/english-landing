@@ -1,0 +1,101 @@
+body {
+    color: #333333;
+}
+
+section, footer{
+    padding: 50px 0;
+}
+
+header{
+    height: 80vh;
+    background: linear-gradient(to right, rgba(255,255,255,0.7), rgba(255,255,255,0.3));
+}
+
+.navbar {
+    margin-bottom: 20vh;
+}
+
+.video {
+    border-radius: 10px ;
+}
+
+
+.Stonehenge {
+    margin-top: 100px;
+    margin-bottom: 100px;
+    color: #FFD55F;
+}
+
+.logo{
+    width: 100px;
+    height: 100px;
+}
+
+.navbar-toggler-icon{
+    background: #000;
+}
+
+.buy-btn{
+    display: block;
+    margin: 0 auto;
+    max-width: 200px;
+    color: var(--bs-white);
+    background-color: #4CAF50;
+    font-weight: 600;
+}
+
+.nav-link {
+    color:#333333;
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    color:#4CAF50;
+}
+
+.about, .reviews{
+    background: linear-gradient(to right, rgba(255,255,255,0.7), rgba(255,255,255,0.3));
+}
+
+.line-reviews {
+    width: 150px;
+    height: 4px;
+    background-color: #52339a;
+    border-radius: 20%;
+    margin: 0 auto;
+}
+
+.card {
+    margin-top: 15px;
+    border: 3px solid #CEB9F3;
+    border-radius: 30px;
+}
+
+.card-btn {
+    background: #4CAF50;
+    border-radius: 15px;
+    font-weight: 500;
+}
+
+.card-btn:hover {
+    color: #000;
+    background: #4CAF50;
+}
+
+.card-title {
+    font-size: 25px;
+}
+
+.author {
+    margin: 0 auto;
+}
+
+.reviews-photo {
+    border-radius: 50%;
+    border: solid 3px var(--color1);
+}
+
+.reviews-block{
+    justify-content: center;
+}

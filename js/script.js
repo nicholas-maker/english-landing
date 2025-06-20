@@ -19,12 +19,8 @@ document.getElementById('enrollmentForm').addEventListener('submit', async funct
 
     try {
         // Отправляем POST-запрос на наш Flask-бэкенд
-<<<<<<< HEAD
         const response = await fetch('https://defabio.pythonanywhere.com/send-email', { // !!! ВАЖНО: Убедитесь, что URL правильный !!!
-=======
-        // Убедитесь, что URL правильный (с '/send-email')
-        const response = await fetch('https://defabio.pythonanywhere.com/send-email', {
->>>>>>> d1d32ec (adding togle)
+
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

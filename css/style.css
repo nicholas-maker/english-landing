@@ -55,7 +55,7 @@ header{
     color:#4CAF50;
 }
 
-.about, .reviews{
+.backgroung-change{
     background: linear-gradient(to right, rgba(255,255,255,0.7), rgba(255,255,255,0.3));
 }
 
@@ -94,7 +94,7 @@ header{
 
 .reviews-photo {
     border-radius: 50%;
-    border: solid 3px var(--color1);
+    border: solid 3px #52339a;
 }
 
 .reviews-block{

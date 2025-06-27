@@ -36,7 +36,7 @@ header {
     flex-direction: column;
     justify-content: center;
     background: linear-gradient(to bottom right, rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.55)), url("img/hero.jpg") center/cover no-repeat;
-    
+
 }
 
 
@@ -52,14 +52,15 @@ header {
     right: 0;
     z-index: 1000;
     background-color: white;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3); 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
     margin-bottom: 0;
 }
 
 .navbar .container-fluid {
-  max-width: 1140px; /* Можно 960px или любое значение, как в Bootstrap */
-  margin: 0 auto;
-  padding: 0 15px;
+    max-width: 1140px;
+    /* Можно 960px или любое значение, как в Bootstrap */
+    margin: 0 auto;
+    padding: 0 15px;
 }
 
 .navbar-nav .nav-link {
@@ -93,7 +94,7 @@ header {
 }
 
 .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0, 0, 0, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(0, 0, 0, 1)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
 
 
@@ -210,30 +211,106 @@ header {
 }
 
 .card {
-    border: 2px solid #C1C1C1;
+    background: linear-gradient(145deg, #ffffff, #f9f9f9);
+    border: none; /* Remove the default border for a cleaner look */
     border-radius: 1.5rem;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
-    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08); /* Stronger, more refined shadow */
+    transition: all 0.3s ease-in-out; /* Smooth transition for all changes */
+    overflow: hidden; /* Ensures content stays within rounded corners */
+    position: relative;
+    padding-bottom: 50px; /* Add space for the button at the bottom */
 }
 
 .card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.08);
+    transform: translateY(-8px) scale(1.01); /* More pronounced lift and slight scale */
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.15); /* Even stronger shadow on hover */
+}
+
+.card-body {
+    padding: 2rem; /* Increase padding for better spacing */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+.card-title {
+    font-size: 1.7rem; /* Larger and more impactful title */
+    color: var(--accent); /* Use accent color for titles */
+    margin-bottom: 1.5rem;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.card-title::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 60px; /* Short underline */
+    height: 3px;
+    background-color: var(--primary); /* Accent color underline */
+    border-radius: 2px;
+}
+
+.card-text {
+    font-size: 1rem;
+    color: #555; /* Slightly darker text for readability */
+    margin-bottom: 1rem; /* Adjust margin */
+}
+
+.card-body .list-unstyled {
+    margin-top: 1.5rem;
+    margin-bottom: 2rem; /* Give more space before the button */
+    padding-left: 0;
+}
+
+.card-body .list-unstyled li {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin-bottom: 0.75rem; /* More space between list items */
+    color: var(--text);
+    padding-left: 1.8rem; /* Space for icon */
+    position: relative;
+}
+
+.card-body .list-unstyled li b {
+    color: var(--accent); /* Bold text in accent color */
+}
+
+.card-body .list-unstyled li::before {
+    content: "✓"; /* Use a checkmark for list items */
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: var(--primary); /* Green checkmark */
+    font-weight: bold;
+    font-size: 1.2rem;
 }
 
 .card-btn {
+    position: absolute;
+    bottom: 20px; /* Position button at the bottom */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%; /* Make button wider */
+    padding: 0.85rem 1.5rem; /* Slightly more padding */
+    font-size: 1.1rem; /* Larger font size */
+    font-weight: 700; /* Bolder text */
+    border-radius: 0.75rem; /* Slightly less rounded for a more modern feel */
     background: var(--primary);
-    border: none;
-    border-radius: 1rem;
-    font-weight: 600;
-    transition: filter 0.3s;
     color: #fff;
+    box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3); /* Shadow for the button */
+    transition: all 0.3s ease;
 }
 
 .card-btn:hover {
-    filter: brightness(1.1);
+    background: var(--primary-light); /* Lighter green on hover */
+    box-shadow: 0 6px 16px rgba(76, 175, 80, 0.4);
+    transform: translateX(-50%) translateY(-2px); /* Slight lift on hover */
+    color: #fff; /* Ensure text color stays white */
 }
-
 /* ===== Reviews ===== */
 .reviews-photo {
     width: 120px;
@@ -270,4 +347,72 @@ footer {
 
 .links:hover {
     transform: translateY(-3px);
+}
+
+.highlight-box {
+    background-color: #f3e5f5;
+    /* Светло-фиолетовый фон, сочетающийся с акцентным цветом */
+    border-left: 5px solid var(--accent);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    max-width: 800px;
+    /* Ограничиваем ширину для лучшей читаемости */
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.highlight-box-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin-bottom: 0;
+}
+
+@media (min-width: 992px) {
+    .highlight-box-title {
+        font-size: 1.4rem;
+    }
+
+    .section-title.text-lg-start {
+        text-align: left !important;
+    }
+}
+
+
+/* ===== Новая секция "Как происходит обучение" ===== */
+.how-it-works .learning-level {
+    margin-bottom: 2rem;
+    padding-left: 2.5rem;
+    /* Отступ слева для иконки */
+    position: relative;
+    text-align: left;
+}
+
+.how-it-works .learning-level:last-child {
+    margin-bottom: 0;
+}
+
+.how-it-works .learning-level::before {
+    content: "🎓";
+    /* Иконка-маркер */
+    position: absolute;
+    left: 0;
+    top: 2px;
+    color: var(--primary);
+    font-size: 1.5rem;
+    /* Размер иконки */
+}
+
+.how-it-works .learning-level-title {
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: 0.75rem;
+}
+
+.how-it-works .learning-level-text {
+    font-size: 1.05rem;
+    line-height: 1.7;
+    color: var(--text);
 }

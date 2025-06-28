@@ -113,6 +113,24 @@ header {
     color: #FFD261;
 }
 
+.discount-note {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #6a5acd; /* благородный фиолетовый */
+  background: #f3f0ff;
+  padding: 0.6rem 0.1rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 10px rgba(106, 90, 205, 0.15);
+  transition: all 0.3s ease-in-out;
+}
+
+.discount-note span {
+  background: linear-gradient(90deg, #7f5af0, #ff80bf);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 600;
+}
+
 .buy-btn {
     display: inline-block;
     padding: 0.75rem 2.5rem;
@@ -130,6 +148,7 @@ header {
     transform: translateY(-3px);
     box-shadow: 0 10px 24px rgba(0, 0, 0, 0.12);
 }
+
 
 /* ===== Video ===== */
 .ratio {
@@ -153,7 +172,12 @@ header {
     color: var(--accent);
     margin-bottom: 2.5rem;
     text-align: center;
+    background: linear-gradient(90deg, #7f5af0, #ff80bf);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
+
+
 
 @media (min-width: 992px) {
     .section-title {
@@ -212,22 +236,30 @@ header {
 
 .card {
     background: linear-gradient(145deg, #ffffff, #f9f9f9);
-    border: none; /* Remove the default border for a cleaner look */
+    border: none;
+    /* Remove the default border for a cleaner look */
     border-radius: 1.5rem;
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08); /* Stronger, more refined shadow */
-    transition: all 0.3s ease-in-out; /* Smooth transition for all changes */
-    overflow: hidden; /* Ensures content stays within rounded corners */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    /* Stronger, more refined shadow */
+    transition: all 0.3s ease-in-out;
+    /* Smooth transition for all changes */
+    overflow: hidden;
+    /* Ensures content stays within rounded corners */
     position: relative;
-    padding-bottom: 50px; /* Add space for the button at the bottom */
+    padding-bottom: 50px;
+    /* Add space for the button at the bottom */
 }
 
 .card:hover {
-    transform: translateY(-8px) scale(1.01); /* More pronounced lift and slight scale */
-    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.15); /* Even stronger shadow on hover */
+    transform: translateY(-8px) scale(1.01);
+    /* More pronounced lift and slight scale */
+    box-shadow: 0 16px 36px rgba(0, 0, 0, 0.15);
+    /* Even stronger shadow on hover */
 }
 
 .card-body {
-    padding: 2rem; /* Increase padding for better spacing */
+    padding: 2rem;
+    /* Increase padding for better spacing */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -235,8 +267,10 @@ header {
 }
 
 .card-title {
-    font-size: 1.7rem; /* Larger and more impactful title */
-    color: var(--accent); /* Use accent color for titles */
+    font-size: 1.7rem;
+    /* Larger and more impactful title */
+    color: var(--accent);
+    /* Use accent color for titles */
     margin-bottom: 1.5rem;
     position: relative;
     padding-bottom: 10px;
@@ -248,69 +282,114 @@ header {
     left: 50%;
     transform: translateX(-50%);
     bottom: 0;
-    width: 60px; /* Short underline */
+    width: 60px;
+    /* Short underline */
     height: 3px;
-    background-color: var(--primary); /* Accent color underline */
+    background-color: var(--primary);
+    /* Accent color underline */
     border-radius: 2px;
 }
 
 .card-text {
     font-size: 1rem;
-    color: #555; /* Slightly darker text for readability */
-    margin-bottom: 1rem; /* Adjust margin */
+    color: #555;
+    /* Slightly darker text for readability */
+    margin-bottom: 1rem;
+    /* Adjust margin */
 }
 
 .card-body .list-unstyled {
     margin-top: 1.5rem;
-    margin-bottom: 2rem; /* Give more space before the button */
+    margin-bottom: 2rem;
+    /* Give more space before the button */
     padding-left: 0;
 }
 
 .card-body .list-unstyled li {
     font-size: 1.05rem;
     line-height: 1.6;
-    margin-bottom: 0.75rem; /* More space between list items */
+    margin-bottom: 0.75rem;
+    /* More space between list items */
     color: var(--text);
-    padding-left: 1.8rem; /* Space for icon */
+    padding-left: 1.8rem;
+    /* Space for icon */
     position: relative;
 }
 
 .card-body .list-unstyled li b {
-    color: var(--accent); /* Bold text in accent color */
+    color: var(--accent);
+    /* Bold text in accent color */
 }
 
 .card-body .list-unstyled li::before {
-    content: "✓"; /* Use a checkmark for list items */
+    content: "✓";
+    /* Use a checkmark for list items */
     position: absolute;
     left: 0;
     top: 0;
-    color: var(--primary); /* Green checkmark */
+    color: var(--primary);
+    /* Green checkmark */
     font-weight: bold;
     font-size: 1.2rem;
 }
 
 .card-btn {
     position: absolute;
-    bottom: 20px; /* Position button at the bottom */
+    bottom: 20px;
+    /* Position button at the bottom */
     left: 50%;
     transform: translateX(-50%);
-    width: 80%; /* Make button wider */
-    padding: 0.85rem 1.5rem; /* Slightly more padding */
-    font-size: 1.1rem; /* Larger font size */
-    font-weight: 700; /* Bolder text */
-    border-radius: 0.75rem; /* Slightly less rounded for a more modern feel */
+    width: 80%;
+    /* Make button wider */
+    padding: 0.85rem 1.5rem;
+    /* Slightly more padding */
+    font-size: 1.1rem;
+    /* Larger font size */
+    font-weight: 700;
+    /* Bolder text */
+    border-radius: 0.75rem;
+    /* Slightly less rounded for a more modern feel */
     background: var(--primary);
     color: #fff;
-    box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3); /* Shadow for the button */
+    box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+    /* Shadow for the button */
     transition: all 0.3s ease;
 }
 
 .card-btn:hover {
-    background: var(--primary-light); /* Lighter green on hover */
+    background: var(--primary-light);
+    /* Lighter green on hover */
     box-shadow: 0 6px 16px rgba(76, 175, 80, 0.4);
-    transform: translateX(-50%) translateY(-2px); /* Slight lift on hover */
-    color: #fff; /* Ensure text color stays white */
+    transform: translateX(-50%) translateY(-2px);
+    /* Slight lift on hover */
+    color: #fff;
+    /* Ensure text color stays white */
 }
+
+.highlighted-subtitle {
+  font-size: 1.35rem; /* немного больше стандартной lead */
+  color: #6a5acd;     /* стильный, но не ядовитый фиолетовый */
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.discount-btn {
+  background-color: #4caf50; 
+  color: #fff;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  border-radius: 8px;
+  padding: 0.65rem 1.25rem;
+  transition: all 0.3s ease;
+}
+
+.discount-btn:hover {
+  background-color: var(--primary);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(106, 90, 205, 0.2);
+}
+
 /* ===== Reviews ===== */
 .reviews-photo {
     width: 120px;

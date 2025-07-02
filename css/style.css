@@ -198,6 +198,16 @@ header {
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.04);
 }
 
+.methodology .card {
+  border: none;
+  border-radius: 1rem;
+  transition: transform 0.2s ease;
+}
+.methodology .card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0.75rem 2rem rgba(0, 0, 0, 0.05);
+}
+
 .list-group-item {
     background: transparent;
     border: none;
